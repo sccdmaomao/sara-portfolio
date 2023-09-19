@@ -1,42 +1,22 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import NavBar from './components/NavBar'
-import Bosideng from './routes/Bosideng'
-import Capcom from './routes/Capcom'
-import Capstone from './routes/Capstone'
-import Contact from './routes/Contact'
-import Home from './routes/Home'
+import { AboutMe } from './routes'
 
 export enum PATH {
-    ROOT = '/',
-    WORK = '/work',
-    CONTACT = '/contact',
-    CAPSTONE = '/work/capstone-playwood',
-    CAPCOM = '/work/brand-book-capcom',
-    BOSIDENG = '/work/bosideng-garment-design',
+    ABOUT_ME = '/',
 }
 
 // Router object
 const router = createBrowserRouter([
     {
-        path: PATH.ROOT,
+        path: PATH.ABOUT_ME,
         element: <NavBar />,
         children: [
             {
                 path: '',
-                element: <Home />,
+                element: <AboutMe />,
             },
-            {
-                path: PATH.WORK,
-                element: <Home />,
-            },
-            {
-                path: PATH.CONTACT,
-                element: <Contact />,
-            },
-            { path: PATH.CAPCOM, element: <Capcom /> },
-            { path: PATH.CAPSTONE, element: <Capstone /> },
-            { path: PATH.BOSIDENG, element: <Bosideng /> },
         ],
         errorElement: <div>404 not found</div>,
     },
