@@ -3,6 +3,8 @@ import '@fontsource/roboto/300.css'
 import '@fontsource/roboto/400.css'
 import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/700.css'
+// import koulen fonts
+import '@fontsource/koulen/'
 
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import React from 'react'
@@ -24,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0; 
-    font-family: Roboto, Open-Sans, Helvetica, Sans-Serif;
+    font-family: Koulen, Roboto, Open-Sans, Helvetica, Sans-Serif;
     background-color: ${theme.palette.grey.A200}
   }
 `
