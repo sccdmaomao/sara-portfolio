@@ -22,7 +22,7 @@ export default defineConfig({
     },
     output: {
         distPath: {
-            root: 'dist',
+            root: 'build',
             js: 'static/js',
             css: 'static/css',
             assets: 'static/assets',
