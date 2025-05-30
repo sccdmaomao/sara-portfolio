@@ -23,6 +23,8 @@
     "typescript": "^4.9.5"
   },
   "devDependencies": {
+    "@rsbuild/core": "^1.3.22",
+    "@rsbuild/plugin-react": "^1.3.1",
     "@types/jest": "^27.5.2",
     "@types/lodash": "^4.14.191",
     "@types/node": "^16.18.13",
@@ -41,11 +43,11 @@
     "prettier": "^2.7.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "rsbuild dev",
+    "build": "rsbuild build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "aws s3 sync build/ s3://spa-sara-portfolio"
+    "deploy": "aws s3 sync dist/ s3://spa-sara-portfolio"
   },
   "eslintConfig": {
     "extends": [
