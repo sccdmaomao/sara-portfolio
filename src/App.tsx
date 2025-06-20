@@ -1,29 +1,21 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import NavBar from './components/NavBar'
-import { AboutMe } from './routes'
-
-export enum PATH {
-    ABOUT_ME = '/',
-}
-
-// Router object
-const router = createBrowserRouter([
-    {
-        path: PATH.ABOUT_ME,
-        element: <NavBar />,
-        children: [
-            {
-                path: '',
-                element: <AboutMe />,
-            },
-        ],
-        errorElement: <div>404 not found</div>,
-    },
-])
+import ContactPage from './components/ContactPage'
+import LandingPage from './components/LandingPage'
+import ProjectDetailPage from './components/ProjectDetailPage'
+import ProjectListPage from './components/ProjectListPage'
 
 const App = () => {
-    return <RouterProvider router={router} />
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/projects" element={<ProjectListPage />} />
+                <Route path="/contact" element={<ContactPage />} />
+                <Route path="/projects/:id" element={<ProjectDetailPage />} />
+            </Routes>
+        </Router>
+    )
 }
 
 export default App
